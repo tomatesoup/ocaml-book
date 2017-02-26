@@ -25,9 +25,15 @@ let rec power x n =
 (* 5. Write a function isconsonant which, given a lowercase character in the range 'a'...'z',determines if it is a consonant. *)
 
 let isconsonant c =
-  if c = 'a' || c = 'e' || c = 'i' || c = 'o' || c = 'u' || c = 'A' || c = 'E' || c = 'I' || c = 'O' || c = 'U'
-    then false
-    else true;;
+  if c = 'a' || c = 'e' || c = 'i' || c = 'o' || c = 'u' then false else true;;
+
+(* refactored *)
+
+let isvowel c =
+  c = 'a' || c = 'e' || c = 'i' || c = 'o' || c = 'u';;
+
+let isconsonant c =
+  not (isvowel c);;
 
 (* 6. What is the result of the expression let x = 1 in let x = 2 in x + x? *)
 Warning 26: unused variable x.
